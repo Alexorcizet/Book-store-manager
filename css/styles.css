@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: lightcyan;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Lobster Two', cursive;
+}
+
+h2 {
+  margin: 5px auto;
+}
+
+.filter {
+  width: 37vw;
+  min-height: 15vw;
+  margin: auto;
+  background-color: rgba(88, 209, 236, 0.601);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.block {
+  display: block;
+  margin: auto;
+}
+.book-shop {
+  max-width: 50vw;
+  margin: 15px auto;
+}
+
+table {
+  width: 75%;
+}
+
+.btn {
+  width: 60px;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: azure;
+  font-size: 1em;
+  font-weight: bold;
+  width: 150px;
+}
+
+table,
+th,
+tr,
+td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+  margin: auto;
+}
+
+.id {
+  font-family: cursive;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.title {
+  color: rgba(47, 79, 79, 0.837);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.price-tag {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.add-new-book {
+  width: 150px;
+  background-color: rgb(26, 130, 172);
+  margin: 15px auto;
+}
+
+td button {
+  color: aliceblue;
+  font-weight: bold;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.read-button {
+  background-color: rgba(6, 60, 224, 0.785);
+}
+
+.update-button {
+  background-color: rgb(239, 118, 70);
+}
+
+.remove-button {
+  background-color: darkorchid;
+}
+
+.modal {
+  max-width: 400px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+  position: absolute;
+  top: 0;
+  left: 75%;
+  background-color: rgba(0, 255, 255, 0.774);
+  padding: 0;
+  transition: 0.5s all;
+}
+
+.hide {
+  top: 0;
+  left: -150%;
+  transition: 0.5s all;
+}
+
+.desc {
+  flex: 1;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 1.1em;
+}
+
+.rate-button {
+  flex: 1;
+  max-width: 30%;
+  border: 1px solid gray;
+  margin: 15px auto;
+}
+
+.rate-button button {
+  width: 30px;
+  margin: 5px;
+}
+
+.rate-button p {
+  display: inline;
+}
+
+.close-button {
+  margin: auto;
+}
+
+.next-page {
+  cursor: pointer;
+  display: inline-block;
+  background-color: blueviolet;
+  width: 25px;
+  padding: 7px;
+}
+
+.next-page:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+input {
+  max-width: 75%;
+}
+
+.prev-page {
+  cursor: pointer;
+  display: inline-block;
+  background-color: rgb(40, 77, 27);
+  width: 25px;
+  padding: 7px;
+  margin: 0;
+}
+
+.prev-page:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.page-div {
+  background-color: lightgray;
+  width: 25vw;
+  margin: auto;
+}
+
+.page-numbers {
+  display: inline-block;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.page-number:hover {
+  background-color: aquamarine;
+}
+
+.curr-page {
+  background-color: mediumslateblue;
+  border-bottom: 1px solid black;
+}

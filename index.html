@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Rubik:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Book Shop</title>
+  </head>
+  <body onload="onInit()">
+    <h1>The greatest Book Shop</h1>
+
+    <section class="filter">
+      <div class="filter-content">
+        <h2>filter by:</h2>
+        <label for="minPrice">
+          <p>
+            Filter by minimum price: $
+            <span class="min-price">1</span>
+          </p>
+          <input
+            name="min-price"
+            class="block"
+            type="range"
+            min="1"
+            value="1"
+            onchange="onSetFilterBy('min-price', this.value)"
+          />
+        </label>
+        <label for="min-rate">
+          <p>
+            Filter by minimum Rating :
+            <span class="min-rate">0</span>
+          </p>
+          <input
+            name="min-rate"
+            class="block"
+            type="range"
+            min="0"
+            max="10"
+            value="0"
+            onchange="onSetFilterBy('min-rate' , this.value)"
+          />
+        </label>
+        <form onsubmit="onSetFilterBy(setNameAtt(),getInput(event))">
+          <p>
+            Filter by KeyWords from Description:
+          </p>
+          <input name="search-box" type="search" class="search" />
+        </form>
+        <h2>Sort by:</h2>
+        <select class="sort-by" oninput="onSetSortBy()">
+          <option value="">sort type</option>
+          <option value="maxPrice">Highest Price</option>
+          <option value="maxRate">Top Ratings</option>
+        </select>
+      </div>
+    </section>
+    <button class="add-new-book btn" onclick="OnAddBook()">Add new book</button>
+    <section class="book-shop">
+      <article>
+        <table class="book-table">
+          <thead>
+            <th>id</th>
+            <th>title</th>
+            <th>rate</th>
+            <th onclick="onSetSortBy('maxPrice')">price</th>
+            <th>actions</th>
+          </thead>
+          <tbody class="book-desc"></tbody>
+        </table>
+      </article>
+    </section>
+    <div class="page-div"></div>
+    <div class="modal hide">
+      <p class="desc"></p>
+      <div class="modal-buttons">
+        <div class="rate-button">
+          <button onclick="onSetRate(this)">-</button>
+          <p class="curr-rate"></p>
+          <button onclick="onSetRate(this)">+</button>
+        </div>
+        <button class="close-button" onclick="onCloseModal()">Close</button>
+      </div>
+    </div>
+    <script src="js/service/storage-service.js"></script>
+    <script src="js/service/utils.service.js"></script>
+    <script src="js/service/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+  </body>
+</html>
