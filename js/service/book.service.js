@@ -17,6 +17,7 @@ var randomNames = ['Harry Potter 1', 'Harry Potter 2', 'Harry Potter 3',
     'World of Warcraft 1', 'World of Warcraft 2', 'World of Warcraft 3', 'World of Warcraft 4',
     'World of Warcraft 5', 'World of Warcraft 6', 'World of Warcraft 7', 'World of Warcraft 8',]
 
+
 _creatbooks(64)
 
 function clickDiv(input) {
@@ -163,3 +164,22 @@ function _creatbook(name = drawNum(randomNames), price = getRandomIntInclusiveFl
 function _saveBooksToStorage() {
     saveToStorage(STORAGE_KEY, gBooks)
 }
+/////////////////////////////////////////Future i18n books////////////////////////////////////
+//var gHeBooks
+// _creatHeBooks(64)
+    // var currLangBooks
+    // if (gCurrLang === 'en') currLangBooks === 
+    // else currLangBooks = gHeBooks
+// var randomHeNames = ['מוטי המלך', 'שמוליק החמור', 'יובל המבולבל', 'דויד המגדויד', 'הראל המחבל']
+// function _creatHeBooks(length) {
+//     // var heBooks = loadFromStorage(STORAGE_KEY)
+//     if (!gHeBooks || !gHeBooks.length) {
+//         gHeBooks = []
+//         for (var i = 0; i < length; i++) {
+//             gHeBooks.push(_creatbook(name = drawNum(randomHeNames)))
+//         }
+//     }
+//     gHeBooks
+//     console.log('heBooks:', gHeBooks)
+//     // _saveBooksToStorage()
+// }

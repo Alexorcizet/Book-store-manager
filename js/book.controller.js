@@ -1,12 +1,20 @@
 'use strict'
 
+
 function onInit() {
   renderFilterByQueryStringParams()
   renderBooks()
   loadFromStorage(STORAGE_KEY)
+  doTrans()
   renderButtons()
   markPage()
 }
+
+function setLang(lang) {
+  gCurrLang = document.querySelector('.choose-lang').value
+}
+
+
 
 function onSetFilterBy(name, elFilter) {
   if (name === 'min-price') {
@@ -68,7 +76,9 @@ function onCloseModal() {
 }
 
 function onUpdateBook(bookId) {
-  var bookPrice = +prompt('What is your current Price for this book?')
+  var bookPrice
+  if (gCurrLang === 'en') +prompt('What is your current Price for this book?')
+  else +prompt('מה המחיר שתרצה לעדכן לספר')
   if (!bookPrice) return
   updateBook(bookId, bookPrice)
   renderBooks()
@@ -92,13 +102,15 @@ function renderBooks() {
     <td class="rate-tag">${book.rate}</td>
     <td class="price-tag">$${book.price}</td>
     <td>
-    <button class="read-button " onclick="OnReadBook('${book.id}')">Read</button>
-    <button class="update-button " onclick="onUpdateBook('${book.id}')">Update</button>
-    <button class="remove-button " onclick="onRemoveBook('${book.id}')">Delete</button>
+    <button class="read-button " onclick="OnReadBook('${book.id}')" data-trans="btn-read"></button>
+    <button class="update-button " onclick="onUpdateBook('${book.id}')" data-trans="btn-update"></button>
+    <button class="remove-button " onclick="onRemoveBook('${book.id}')" data-trans="btn-delete"></button>
     </td>
     </tr>`
   )
+
   document.querySelector('.book-desc').innerHTML = strHTML.join('')
+  doTrans()
 }
 
 function renderFilterByQueryStringParams() {
@@ -123,13 +135,13 @@ function renderFilterByQueryStringParams() {
 
 function renderButtons() {
   var elDiv = document.querySelector('.page-div')
-  var strsHTML = `<button class="prev-page btn" onclick="onPrevPage()" disabled>
+  var strsHTML = `<button class="prev-page " onclick="onPrevPage()" disabled>
   &#171;
 </button><div class="page-numbers">`
   for (var i = 0; i < Math.floor(gBooks.length / PAGE_SIZE); i++) {
     strsHTML += `<div class="page-number div-${i + 1}" onclick="onClickDiv(this)">${i + 1}</div>`
   }
-  strsHTML += `</div><button class="next-page btn" onclick="onNextPage()">&#187;</button>`
+  strsHTML += `</div><button class="next-page" onclick="onNextPage()">&#187;</button>`
   elDiv.innerHTML = strsHTML
 }
 
@@ -149,3 +161,27 @@ function onClickDiv(elDiv) {
   renderBooks()
   markPage()
 }
+
+function onSetLang(lang) {
+  setLang(lang)
+  if (lang === 'he') document.body.classList.add('rtl')
+  else document.body.classList.remove('rtl')
+  doTrans()
+  renderBooks()
+}
+
+function doTrans() {
+  const els = document.querySelectorAll('[data-trans]')
+  els.forEach(el => {
+    const translateKey = el.dataset.trans
+    el.innerText = getTrans(translateKey)
+  })
+}
+
+function getTrans(transKey) {
+  const key = gPageTrans[transKey]
+  if (!key) return "Unknown"
+  const translate = key[gCurrLang]
+  return translate
+}
+

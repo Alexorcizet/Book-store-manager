@@ -1,80 +1,86 @@
+'use strict'
+
+var gCurrLang = 'en'
+
 var gPageTrans = {
-    title: {
+    header: {
         en: 'The greatest Book Shop',
         he: 'חנות הספרים הטובה ביותר'
     },
-    'filter-by': {
-        en: 'filter by:',
-        he: ':סינון על פי'
+    filter: {
+        en: 'Filter by:',
+        he: ':סנן לפי'
     },
     price: {
-        en: 'Filter by minimum price:',
-        he: 'סינון על פי מחיר מינימלי'
+        en: 'Filter by minimum price:$',
+        he: ':סנן לפי מחיר מינימלי'
     },
     rating: {
         en: 'Filter by minimum Rating :',
-        he: 'סינון על פי דירוג מינימלי'
+        he: ':סנן לפי דירוג מינימלי'
     },
     'book-title': {
         en: 'Filter by book title:',
-        he: 'סינון לפי שם ספר'
+        he: ':סנן לפי שם ספר'
     },
     'sort-by': {
         en: 'Sort by:',
-        he: 'מיין לפי'
+        he: ':מיין לפי'
     },
-
+    'set-lang': {
+        en: 'Language:',
+        he: 'בחר שפה:'
+    },
     'sort-select': {
         en: 'Sort type',
-        he: 'סוג המיון',
+        he: 'בחר מיון',
     },
     'sort-price': {
         en: 'Highest price',
         he: 'מהיקר לזול'
     },
     'sort-rating': {
-        en: 'Highest rating',
+        en: 'Top rating',
         he: 'מהדירוג הגבוה לנמוך'
     },
-
-
-}
-
-var gTableTrans = {
     'add-book': {
         en: 'Add a new Book',
         he: 'הוסף ספר'
     },
-    'book-button-read': {
-        en: 'Read',
-        he: 'תקציר'
-    },
-    'book-button-update': {
-        en: 'Update',
-        he: 'עדכון'
-    },
-    'book-button-delete': {
-        en: 'Delete',
-        he: 'מחק'
-    },
-    'header-id': {
+    'th-id': {
         en: 'Id',
         he: 'מזהה'
     },
-    'header-title': {
+    'th-title': {
         en: 'Title',
         he: 'שם הספר'
     },
-    'header-rate': {
+    'th-rate': {
         en: 'Rating',
         he: 'דירוג'
     },
-    'header-price': {
+    'th-price': {
         en: 'Price',
         he: 'מחיר'
     },
-    'header-actions': {
+    'th-actions': {
         en: 'Actions',
         he: 'פעולות'
     },
+    'btn-read': {
+        en: 'Read',
+        he: 'תקציר'
+    },
+    'btn-update': {
+        en: 'Update',
+        he: 'עדכון'
+    },
+    'btn-delete': {
+        en: 'Delete',
+        he: 'מחק'
+    },
+    'modal-close': {
+        en: 'Close',
+        he: 'סגור'
+    }
 }
