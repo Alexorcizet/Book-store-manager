@@ -8,28 +8,28 @@ var gPageTrans = {
         he: 'חנות הספרים הטובה ביותר'
     },
     filter: {
-        en: 'Filter by:',
-        he: ':סנן לפי'
+        en: 'Filter by',
+        he: 'סנן לפי'
     },
     price: {
-        en: 'Filter by minimum price:$',
-        he: ':סנן לפי מחיר מינימלי'
+        en: 'Filter by minimum price',
+        he: 'סנן לפי מחיר מינימלי'
     },
     rating: {
-        en: 'Filter by minimum Rating :',
-        he: ':סנן לפי דירוג מינימלי'
+        en: 'Filter by minimum Rating ',
+        he: 'סנן לפי דירוג מינימלי'
     },
     'book-title': {
-        en: 'Filter by book title:',
-        he: ':סנן לפי שם ספר'
+        en: 'Filter by book title',
+        he: 'סנן לפי שם ספר'
     },
     'sort-by': {
-        en: 'Sort by:',
-        he: ':מיין לפי'
+        en: 'Sort by',
+        he: 'מיין לפי'
     },
     'set-lang': {
-        en: 'Language:',
-        he: 'בחר שפה:'
+        en: 'Language',
+        he: 'בחר שפה'
     },
     'sort-select': {
         en: 'Sort type',
